@@ -18,18 +18,7 @@ const AdminLogin = () => {
     if (error) {
       toast({ title: "Login failed: " + error.message, variant: "destructive" });
     } else {
-      navigate("/admin/dashboard");
-    }
-  };
-
-  const handleSignUp = async () => {
-    setLoading(true);
-    const { error } = await supabase.auth.signUp({ email, password });
-    setLoading(false);
-    if (error) {
-      toast({ title: "Signup failed: " + error.message, variant: "destructive" });
-    } else {
-      toast({ title: "Account created! Now click Sign In." });
+      navigate("/admin");
     }
   };
 
@@ -47,9 +36,6 @@ const AdminLogin = () => {
         <Input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
         <Button className="w-full bg-green-800 hover:bg-green-900" onClick={handleLogin} disabled={loading}>
           {loading ? "Please wait..." : "Sign In"}
-        </Button>
-        <Button className="w-full" variant="outline" onClick={handleSignUp} disabled={loading}>
-          First time? Create Admin Account
         </Button>
       </div>
     </div>

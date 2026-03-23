@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 26% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 8%;
+    --primary: 164 90% 20%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 164 90% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 160 20% 96%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 201 94% 86%;
+    --accent-foreground: 164 90% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 160 15% 90%;
+    --input: 160 15% 90%;
+    --ring: 164 90% 20%;
+    --radius: 0.75rem;
+
+    --emerald: 164 90% 20%;
+    --emerald-light: 160 40% 95%;
+    --forest: 164 90% 15%;
+    --aqua: 201 94% 86%;
+    --aqua-dark: 201 70% 50%;
+    --slate: 220 26% 8%;
+
+    --font-display: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 164 90% 15%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 201 94% 86%;
+    --sidebar-primary-foreground: 164 90% 15%;
+    --sidebar-accent: 164 70% 22%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 164 60% 25%;
+    --sidebar-ring: 201 94% 86%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-gradient-emerald {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--emerald)), hsl(var(--forest)));
+  }
+  .bg-gradient-emerald {
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+  .bg-gradient-aqua {
+    background-image: linear-gradient(135deg, hsl(var(--aqua)), hsl(var(--emerald-light)));
+  }
+  .shadow-card {
+    box-shadow: 0 4px 24px -4px hsl(var(--primary) / 0.08), 0 1px 4px hsl(var(--primary) / 0.04);
+  }
+  .shadow-card-hover {
+    box-shadow: 0 8px 40px -8px hsl(var(--primary) / 0.15), 0 2px 8px hsl(var(--primary) / 0.06);
+  }
+  .glass-card {
+    @apply bg-background/80 backdrop-blur-md border border-border/50;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Water ripple animation */
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-ripple {
+  animation: ripple 2s ease-out infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

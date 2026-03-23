@@ -26,9 +26,9 @@ const AdminLogin = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md space-y-4">
         <div className="text-center">
-          <div className="w-16 h-16 bg-green-800 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-white text-2xl">??</span>
-          </div>
+          <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+  <img src="/assets/sg-logo.jpeg" alt="Shivraya Group" className="w-full h-full object-cover" />
+</div>
           <h1 className="text-2xl font-bold">Admin Login</h1>
           <p className="text-gray-500">Shivraya Group Dashboard</p>
         </div>

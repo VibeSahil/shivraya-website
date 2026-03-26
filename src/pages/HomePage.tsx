@@ -20,8 +20,8 @@ const HomePage = () => (
         transition={{ duration: 4, ease: "easeOut" }}
       />
 
-      {/* 🌑 Dark Overlay (for text visibility) */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* 🌑 Dark Overlay (improved) */}
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* 🔤 Text Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20">
@@ -35,7 +35,7 @@ const HomePage = () => (
             Packaged Drinking Water
           </p>
 
-          <h1 className="font-display font-extrabold text-5xl md:text-7xl text-white mb-4 leading-tight">
+          <h1 className="font-display font-extrabold text-5xl md:text-7xl text-white mb-4 leading-tight drop-shadow-lg">
             BeNew
           </h1>
 
@@ -47,23 +47,27 @@ const HomePage = () => (
             Pure Water From Nature. Premium packaged drinking water you can trust.
           </p>
 
+          {/* ✅ FIXED BUTTONS */}
           <div className="flex flex-wrap gap-4">
+            
+            {/* Primary Button */}
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-secondary text-primary-foreground font-display font-semibold rounded-full px-8"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-full px-8 shadow-lg"
             >
               <Link to="/be-new">Explore BeNew</Link>
             </Button>
 
+            {/* Glass Button */}
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-white/40 text-white hover:bg-white/10 font-display font-semibold rounded-full px-8"
+              className="bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 font-semibold rounded-full px-8"
             >
               <Link to="/products">View Products</Link>
             </Button>
+
           </div>
         </motion.div>
       </div>

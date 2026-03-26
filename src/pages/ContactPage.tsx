@@ -94,7 +94,6 @@ const ContactPage = () => {
                   className="rounded-xl"
                 />
 
-                {/* Button */}
                 <Button
                   type="submit"
                   disabled={loading}
@@ -116,13 +115,18 @@ const ContactPage = () => {
 
                   <div className="space-y-4">
 
-                    {/* 📍 Location */}
-                    <div className="flex items-start gap-3 text-muted-foreground">
+                    {/* 📍 Clickable Location */}
+                    <a
+                      href="https://www.google.com/maps?q=Shivraya+Group+Of+Companies+Pauni+Bhandara+Maharashtra"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-3 text-muted-foreground hover:text-primary hover:underline transition"
+                    >
                       <MapPin className="h-5 w-5 text-primary mt-1" />
                       <span>
                         Shivraya Group Of Companies, Pauni, District Bhandara, Maharashtra, India
                       </span>
-                    </div>
+                    </a>
 
                     {/* 📞 Clickable Phone */}
                     <a

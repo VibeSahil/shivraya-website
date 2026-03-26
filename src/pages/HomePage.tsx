@@ -20,7 +20,7 @@ const HomePage = () => (
         transition={{ duration: 4, ease: "easeOut" }}
       />
 
-      {/* 🌑 Dark Overlay (improved) */}
+      {/* 🌑 Dark Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
       {/* 🔤 Text Content */}
@@ -47,23 +47,21 @@ const HomePage = () => (
             Pure Water From Nature. Premium packaged drinking water you can trust.
           </p>
 
-          {/* ✅ FIXED BUTTONS */}
+          {/* ✅ UPDATED BUTTONS */}
           <div className="flex flex-wrap gap-4">
-            
-            {/* Primary Button */}
+
             <Button
               asChild
               size="lg"
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-full px-8 shadow-lg"
+              className="bg-emerald-600/20 border border-emerald-400 text-white hover:bg-emerald-600/30 font-semibold rounded-full px-8 backdrop-blur-md hover:shadow-lg hover:shadow-emerald-500/30"
             >
               <Link to="/be-new">Explore BeNew</Link>
             </Button>
 
-            {/* Glass Button */}
             <Button
               asChild
               size="lg"
-              className="bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 font-semibold rounded-full px-8"
+              className="bg-emerald-600/20 border border-emerald-400 text-white hover:bg-emerald-600/30 font-semibold rounded-full px-8 backdrop-blur-md hover:shadow-lg hover:shadow-emerald-500/30"
             >
               <Link to="/products">View Products</Link>
             </Button>

@@ -7,23 +7,26 @@ import SectionHeading from "@/components/SectionHeading";
 
 const HomePage = () => (
   <main>
+
+    {/* ✅ SEO META (ADD IN INDEX.HTML ALSO) */}
+
     {/* Hero */}
     <section className="relative min-h-screen flex items-center overflow-hidden">
 
-      {/* 🖼️ Background Image with Zoom Animation */}
+      {/* Background Image */}
       <motion.img
         src="/benew-hero.jpg"
-        alt="BeNew - Pure Water"
+        alt="BeNew water bottle packaged drinking water in Pauni by Shivaraya Group"
         className="absolute inset-0 w-full h-full object-cover"
         initial={{ scale: 1.2 }}
         animate={{ scale: 1 }}
         transition={{ duration: 4, ease: "easeOut" }}
       />
 
-      {/* 🌑 Dark Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* 🔤 Text Content */}
+      {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -31,71 +34,75 @@ const HomePage = () => (
           transition={{ duration: 1.2, delay: 1 }}
           className="max-w-2xl"
         >
-          <p className="text-aqua font-display font-semibold text-lg mb-2">
-            Packaged Drinking Water
+
+          <p className="text-aqua font-semibold text-lg mb-2">
+            Packaged Drinking Water in Pauni
           </p>
 
-          <h1 className="font-display font-extrabold text-5xl md:text-7xl text-white mb-4 leading-tight drop-shadow-lg">
-            BeNew
+          {/* ✅ SEO H1 */}
+          <h1 className="font-extrabold text-5xl md:text-7xl text-white mb-4 leading-tight">
+            Shivaraya Group – BeNew Water Bottle
           </h1>
 
-          <p className="text-white/80 text-2xl md:text-3xl font-display italic mb-2">
+          <p className="text-white/80 text-2xl italic mb-2">
             Be Safe. BeNew.
           </p>
 
-          <p className="text-white/70 text-lg md:text-xl mb-8 font-body">
-            Pure Water From Nature. Premium packaged drinking water you can trust.
+          {/* ✅ SEO PARAGRAPH */}
+          <p className="text-white/70 text-lg mb-8">
+            BeNew water bottle is a premium packaged drinking water brand by Shivaraya Group in Pauni, Maharashtra. 
+            We provide safe, purified and hygienic drinking water for homes, offices and events.
           </p>
 
-          {/* ✅ UPDATED BUTTONS */}
           <div className="flex flex-wrap gap-4">
 
-            <Button
-              asChild
-              size="lg"
-              className="bg-emerald-600/20 border border-emerald-400 text-white hover:bg-emerald-600/30 font-semibold rounded-full px-8 backdrop-blur-md hover:shadow-lg hover:shadow-emerald-500/30"
-            >
-              <Link to="/be-new">Explore BeNew</Link>
+            <Button asChild size="lg" className="rounded-full px-8">
+              <Link to="/be-new">Explore BeNew Water Bottle</Link>
             </Button>
 
-            <Button
-              asChild
-              size="lg"
-              className="bg-emerald-600/20 border border-emerald-400 text-white hover:bg-emerald-600/30 font-semibold rounded-full px-8 backdrop-blur-md hover:shadow-lg hover:shadow-emerald-500/30"
-            >
+            <Button asChild size="lg" variant="outline" className="rounded-full px-8">
               <Link to="/products">View Products</Link>
             </Button>
 
           </div>
         </motion.div>
       </div>
+    </section>
 
-      {/* 💧 Ripple Dot */}
-      <div className="absolute bottom-10 right-10 hidden md:block z-10">
-        <div className="w-4 h-4 rounded-full bg-aqua/40 animate-ripple" />
+    {/* ✅ LOCATION SEO SECTION */}
+    <section className="py-16 bg-muted">
+      <div className="container mx-auto px-4 text-center max-w-3xl">
+        <h2 className="text-3xl font-bold mb-4">
+          Drinking Water Supplier in Pauni
+        </h2>
+        <p className="text-muted-foreground">
+          Shivaraya Group is a trusted supplier of BeNew packaged drinking water in Pauni, District Bhandara, Maharashtra. 
+          We deliver high-quality water bottles for homes, businesses and bulk supply.
+        </p>
       </div>
     </section>
 
     {/* Why BeNew */}
     <section className="py-24">
       <div className="container mx-auto px-4">
-        <AnimatedSection>
-          <SectionHeading title="Why BeNew?" subtitle="Pure water you can trust" />
-        </AnimatedSection>
+        <SectionHeading 
+          title="Why BeNew Water Bottle?" 
+          subtitle="Pure, safe and hygienic drinking water" 
+        />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {[
-            { icon: Droplets, title: "Pure Hydration", desc: "Multi-stage purification for crystal-clear water" },
-            { icon: ShieldCheck, title: "Safe & Certified", desc: "Meets all safety and quality standards" },
-            { icon: Package, title: "Hygienic Packaging", desc: "Sealed in clean, tamper-proof bottles" },
-            { icon: Sparkles, title: "Modern Technology", desc: "Advanced purification for better outcomes" },
+            { icon: Droplets, title: "Pure Hydration", desc: "Multi-stage purification ensures clean drinking water" },
+            { icon: ShieldCheck, title: "Safe & Certified", desc: "Meets all safety standards for drinking water" },
+            { icon: Package, title: "Hygienic Packaging", desc: "Sealed bottles for safe usage" },
+            { icon: Sparkles, title: "Modern Technology", desc: "Advanced purification process" },
           ].map((v, i) => (
             <AnimatedSection key={v.title} delay={i * 0.1}>
               <div className="text-center p-6">
                 <div className="w-12 h-12 rounded-full bg-emerald-light flex items-center justify-center mx-auto mb-4">
                   <v.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h4 className="font-display font-semibold text-lg mb-2">{v.title}</h4>
+                <h4 className="font-semibold text-lg mb-2">{v.title}</h4>
                 <p className="text-sm text-muted-foreground">{v.desc}</p>
               </div>
             </AnimatedSection>
@@ -104,26 +111,54 @@ const HomePage = () => (
       </div>
     </section>
 
-    {/* CTA */}
-    <section className="py-20 bg-gradient-emerald text-primary-foreground">
-      <div className="container mx-auto px-4 text-center">
-        <AnimatedSection>
-          <h2 className="font-display font-bold text-3xl md:text-4xl mb-4">
-            Stay Hydrated with BeNew
-          </h2>
-          <p className="text-primary-foreground/70 text-lg mb-8 max-w-xl mx-auto">
-            Experience pure, safe drinking water — from Shivraya Group, Pauni.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-background text-primary hover:bg-background/90 font-display font-semibold rounded-full px-8"
-          >
-            <Link to="/contact">Contact Us Today</Link>
-          </Button>
-        </AnimatedSection>
+    {/* ✅ FAQ (VERY POWERFUL SEO) */}
+    <section className="py-20 bg-muted">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <h2 className="text-3xl font-bold mb-6 text-center">
+          FAQs About BeNew Water Bottle
+        </h2>
+
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-semibold">What is BeNew water bottle?</h3>
+            <p className="text-muted-foreground">
+              BeNew is a premium packaged drinking water brand by Shivaraya Group in Pauni.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold">Is BeNew drinking water safe?</h3>
+            <p className="text-muted-foreground">
+              Yes, BeNew water bottles are purified and safe for daily use.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold">Where can I buy BeNew water bottle?</h3>
+            <p className="text-muted-foreground">
+              You can buy BeNew water bottles in Pauni directly from Shivaraya Group.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
+
+    {/* CTA */}
+    <section className="py-20 bg-gradient-emerald text-center">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-4">
+          Buy BeNew Water Bottle Today
+        </h2>
+        <p className="mb-6">
+          Contact Shivaraya Group for safe and purified drinking water in Pauni.
+        </p>
+
+        <Button asChild size="lg" className="rounded-full px-8">
+          <Link to="/contact">Contact Us</Link>
+        </Button>
+      </div>
+    </section>
+
   </main>
 );
 

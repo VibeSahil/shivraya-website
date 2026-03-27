@@ -34,7 +34,6 @@ const HomePage = () => (
             Packaged Drinking Water in Pauni
           </p>
 
-          {/* ✅ CLEAN H1 */}
           <h1 className="font-extrabold text-5xl md:text-7xl text-white mb-4 leading-tight">
             BeNew
           </h1>
@@ -43,14 +42,12 @@ const HomePage = () => (
             Be Safe. BeNew.
           </p>
 
-          {/* ✅ SPELLING FIXED */}
           <p className="text-white/70 text-lg mb-8">
             BeNew is a premium packaged drinking water brand by Shivraya Group in Pauni, Maharashtra.
             We provide safe, purified and hygienic drinking water for homes, offices and events.
           </p>
 
           <div className="flex flex-wrap gap-4">
-
             <Button asChild size="lg" className="rounded-full px-8">
               <Link to="/be-new">Explore BeNew</Link>
             </Button>
@@ -58,8 +55,8 @@ const HomePage = () => (
             <Button asChild size="lg" variant="outline" className="rounded-full px-8">
               <Link to="/products">View Products</Link>
             </Button>
-
           </div>
+
         </motion.div>
       </div>
     </section>
@@ -138,19 +135,26 @@ const HomePage = () => (
       </div>
     </section>
 
-    {/* CTA */}
-    <section className="py-20 bg-gradient-emerald text-center">
+    {/* ✅ UPDATED CTA (WHITE TEXT FIXED) */}
+    <section className="py-20 bg-gradient-emerald text-center text-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-4">
+        
+        <h2 className="text-3xl font-bold mb-4 text-white">
           Get BeNew Today
         </h2>
-        <p className="mb-6">
+
+        <p className="mb-6 text-white/90">
           Contact Shivraya Group for safe and purified drinking water in Pauni.
         </p>
 
-        <Button asChild size="lg" className="rounded-full px-8">
+        <Button 
+          asChild 
+          size="lg" 
+          className="rounded-full px-8 bg-white text-green-700 hover:bg-white/90"
+        >
           <Link to="/contact">Contact Us</Link>
         </Button>
+
       </div>
     </section>
 

@@ -7,18 +7,22 @@ import SectionHeading from "@/components/SectionHeading";
 
 const HomePage = () => (
   <main>
-
     {/* Hero */}
     <section className="relative min-h-screen flex items-center overflow-hidden">
-
-      <motion.img
-        src="/benew-hero.jpg"
-        alt="BeNew packaged drinking water in Pauni"
+      <motion.video
         className="absolute inset-0 w-full h-full object-cover"
-        initial={{ scale: 1.2 }}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/benew-hero.jpg"
+        initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 4, ease: "easeOut" }}
-      />
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </motion.video>
 
       <div className="absolute inset-0 bg-black/60" />
 
@@ -29,7 +33,6 @@ const HomePage = () => (
           transition={{ duration: 1.2, delay: 1 }}
           className="max-w-2xl"
         >
-
           <p className="text-aqua font-semibold text-lg mb-2">
             Packaged Drinking Water in Pauni
           </p>
@@ -43,8 +46,9 @@ const HomePage = () => (
           </p>
 
           <p className="text-white/70 text-lg mb-8">
-            BeNew is a premium packaged drinking water brand by Shivraya Group in Pauni, Maharashtra.
-            We provide safe, purified and hygienic drinking water for homes, offices and events.
+            BeNew is a premium packaged drinking water brand by Shivraya Group in
+            Pauni, Maharashtra. We provide safe, purified and hygienic drinking
+            water for homes, offices and events.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -52,11 +56,15 @@ const HomePage = () => (
               <Link to="/be-new">Explore BeNew</Link>
             </Button>
 
-            <Button asChild size="lg" variant="outline" className="rounded-full px-8">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full px-8 border-white text-white hover:bg-white hover:text-black"
+            >
               <Link to="/products">View Products</Link>
             </Button>
           </div>
-
         </motion.div>
       </div>
     </section>
@@ -68,8 +76,9 @@ const HomePage = () => (
           Drinking Water Supplier in Pauni
         </h2>
         <p className="text-muted-foreground">
-          Shivraya Group is a trusted supplier of BeNew packaged drinking water in Pauni, District Bhandara, Maharashtra.
-          We deliver high-quality drinking water for homes, businesses and bulk supply.
+          Shivraya Group is a trusted supplier of BeNew packaged drinking water in
+          Pauni, District Bhandara, Maharashtra. We deliver high-quality drinking
+          water for homes, businesses and bulk supply.
         </p>
       </div>
     </section>
@@ -77,22 +86,38 @@ const HomePage = () => (
     {/* Why BeNew */}
     <section className="py-24">
       <div className="container mx-auto px-4">
-        <SectionHeading 
-          title="Why BeNew?" 
-          subtitle="Pure, safe and hygienic drinking water" 
+        <SectionHeading
+          title="Why BeNew?"
+          subtitle="Pure, safe and hygienic drinking water"
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {[
-            { icon: Droplets, title: "Pure Hydration", desc: "Multi-stage purification ensures clean water" },
-            { icon: ShieldCheck, title: "Safe & Certified", desc: "Meets all safety standards" },
-            { icon: Package, title: "Hygienic Packaging", desc: "Sealed and safe bottles" },
-            { icon: Sparkles, title: "Modern Technology", desc: "Advanced purification process" },
+            {
+              icon: Droplets,
+              title: "Pure Hydration",
+              desc: "Multi-stage purification ensures clean water",
+            },
+            {
+              icon: ShieldCheck,
+              title: "Safe & Certified",
+              desc: "Meets all safety standards",
+            },
+            {
+              icon: Package,
+              title: "Hygienic Packaging",
+              desc: "Sealed and safe bottles",
+            },
+            {
+              icon: Sparkles,
+              title: "Modern Technology",
+              desc: "Advanced purification process",
+            },
           ].map((v, i) => (
             <AnimatedSection key={v.title} delay={i * 0.1}>
-              <div className="text-center p-6">
-                <div className="w-12 h-12 rounded-full bg-emerald-light flex items-center justify-center mx-auto mb-4">
-                  <v.icon className="h-6 w-6 text-primary" />
+              <div className="text-center p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                  <v.icon className="h-7 w-7 text-emerald-600" />
                 </div>
                 <h4 className="font-semibold text-lg mb-2">{v.title}</h4>
                 <p className="text-sm text-muted-foreground">{v.desc}</p>
@@ -110,23 +135,24 @@ const HomePage = () => (
           FAQs About BeNew
         </h2>
 
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-semibold">What is BeNew?</h3>
+        <div className="space-y-6">
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 className="font-semibold mb-2">What is BeNew?</h3>
             <p className="text-muted-foreground">
-              BeNew is a premium packaged drinking water brand by Shivraya Group in Pauni.
+              BeNew is a premium packaged drinking water brand by Shivraya Group
+              in Pauni.
             </p>
           </div>
 
-          <div>
-            <h3 className="font-semibold">Is BeNew water safe?</h3>
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 className="font-semibold mb-2">Is BeNew water safe?</h3>
             <p className="text-muted-foreground">
               Yes, BeNew water is purified and safe for daily use.
             </p>
           </div>
 
-          <div>
-            <h3 className="font-semibold">Where can I buy BeNew?</h3>
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 className="font-semibold mb-2">Where can I buy BeNew?</h3>
             <p className="text-muted-foreground">
               You can buy BeNew in Pauni directly from Shivraya Group.
             </p>
@@ -135,10 +161,9 @@ const HomePage = () => (
       </div>
     </section>
 
-    {/* ✅ UPDATED CTA (WHITE TEXT FIXED) */}
-    <section className="py-20 bg-gradient-emerald text-center text-white">
+    {/* CTA */}
+    <section className="py-20 bg-gradient-to-r from-emerald-600 to-green-500 text-center text-white">
       <div className="container mx-auto px-4">
-        
         <h2 className="text-3xl font-bold mb-4 text-white">
           Get BeNew Today
         </h2>
@@ -147,17 +172,15 @@ const HomePage = () => (
           Contact Shivraya Group for safe and purified drinking water in Pauni.
         </p>
 
-        <Button 
-          asChild 
-          size="lg" 
+        <Button
+          asChild
+          size="lg"
           className="rounded-full px-8 bg-white text-green-700 hover:bg-white/90"
         >
           <Link to="/contact">Contact Us</Link>
         </Button>
-
       </div>
     </section>
-
   </main>
 );
 

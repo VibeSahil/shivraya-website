@@ -4,7 +4,6 @@ import SectionHeading from "@/components/SectionHeading";
 
 import bottleHero from "@/assets/benew-hero.png";
 import bottleFestival from "@/assets/benew-festival.png";
-import bottleNature from "@/assets/benew-nature.png";
 import bottle500 from "@/assets/benew-bottle-500ml.png";
 import bottle1L from "@/assets/benew-bottle-1l.png";
 
@@ -38,11 +37,18 @@ const BeNewPage = () => (
     {/* Hero */}
     <section className="relative min-h-[70vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={bottleNature}
-          alt="BeNew pure water from nature"
+        <video
           className="w-full h-full object-cover"
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/benew-hero.jpg"
+        >
+          <source src="/benew-page-video.mp4" type="video/mp4" />
+        </video>
+
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
       </div>
 
@@ -130,8 +136,6 @@ const BeNewPage = () => (
           {products.map((p, i) => (
             <AnimatedSection key={p.name} delay={i * 0.15}>
               <div className="bg-card rounded-3xl overflow-hidden shadow-card border border-border/50 p-8 hover:shadow-card-hover transition-all duration-300 group">
-                
-                {/* Product Image */}
                 <div className="bg-gradient-aqua rounded-2xl p-6 mb-6">
                   <img
                     src={p.image}
@@ -140,22 +144,18 @@ const BeNewPage = () => (
                   />
                 </div>
 
-                {/* Badge */}
                 <span className="inline-block text-xs font-semibold text-primary bg-emerald-light px-3 py-1 rounded-full mb-4">
                   BeNew Water
                 </span>
 
-                {/* Name */}
                 <h3 className="font-display font-bold text-2xl mb-2">
                   {p.name}
                 </h3>
 
-                {/* Size */}
                 <p className="text-primary font-semibold text-lg mb-4">
                   {p.size}
                 </p>
 
-                {/* Features */}
                 <ul className="space-y-2">
                   {p.features.map((f) => (
                     <li

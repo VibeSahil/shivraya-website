@@ -52,15 +52,20 @@ const HomePage = () => (
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg" className="rounded-full px-8">
+            <Button
+              asChild
+              size="lg"
+              variant="default"
+              className="rounded-full px-8 !bg-emerald-600 !text-white hover:!bg-emerald-700 border-0 shadow-lg"
+            >
               <Link to="/be-new">Explore BeNew</Link>
             </Button>
 
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="rounded-full px-8 border-white text-white hover:bg-white hover:text-black"
+              variant="default"
+              className="rounded-full px-8 !bg-emerald-600 !text-white hover:!bg-emerald-700 border-0 shadow-lg"
             >
               <Link to="/products">View Products</Link>
             </Button>

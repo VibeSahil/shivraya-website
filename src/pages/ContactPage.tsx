@@ -111,39 +111,48 @@ const ContactPage = () => {
               <div className="space-y-6">
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Our Location</h3>
+                  <h3 className="text-lg font-semibold mb-4">Our Contact Information</h3>
 
                   <div className="space-y-4">
 
                     {/* 📍 Clickable Location */}
                     <a
-                      href="https://www.google.com/maps?q=Shivraya+Group+Of+Companies+Pauni+Bhandara+Maharashtra"
+                      href="https://maps.google.com/?q=Shivraya+Group+Of+Companies+Pauni+Bhandara+Maharashtra"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-start gap-3 text-muted-foreground hover:text-primary hover:underline transition"
+                      className="flex items-start gap-3 text-muted-foreground hover:text-primary transition group"
                     >
-                      <MapPin className="h-5 w-5 text-primary mt-1" />
-                      <span>
+                      <MapPin className="h-5 w-5 text-emerald-600 mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="group-hover:underline">
                         Shivraya Group Of Companies, Pauni, District Bhandara, Maharashtra, India
                       </span>
                     </a>
 
-                    {/* 📞 Clickable Phone */}
-                    <a
-                      href="tel:+918766837945"
-                      className="flex items-center gap-3 text-muted-foreground hover:text-primary hover:underline transition"
-                    >
-                      <Phone className="h-5 w-5 text-primary" />
-                      <span>+91 87668 37945</span>
-                    </a>
+                    {/* 📞 Clickable Phone Numbers */}
+                    <div className="flex flex-col gap-4">
+                      <a
+                        href="tel:+918766837945"
+                        className="flex items-center gap-3 text-muted-foreground hover:text-primary transition group"
+                      >
+                        <Phone className="h-5 w-5 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" />
+                        <span className="group-hover:underline">+91 87668 37945</span>
+                      </a>
+                      <a
+                        href="tel:+917559204328"
+                        className="flex items-center gap-3 text-muted-foreground hover:text-primary transition group"
+                      >
+                        <Phone className="h-5 w-5 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" />
+                        <span className="group-hover:underline">+91 75592 04328</span>
+                      </a>
+                    </div>
 
                     {/* 📧 Clickable Email */}
                     <a
                       href="mailto:shivrayagroupofcompanies@gmail.com"
-                      className="flex items-center gap-3 text-muted-foreground hover:text-primary hover:underline transition"
+                      className="flex items-center gap-3 text-muted-foreground hover:text-primary transition group"
                     >
-                      <Mail className="h-5 w-5 text-primary" />
-                      <span>shivrayagroupofcompanies@gmail.com</span>
+                      <Mail className="h-5 w-5 text-emerald-600 shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="group-hover:underline">shivrayagroupofcompanies@gmail.com</span>
                     </a>
 
                   </div>

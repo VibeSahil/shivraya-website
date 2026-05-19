@@ -44,18 +44,38 @@ const Footer = () => (
         <div>
           <h4 className="font-display font-semibold mb-4">Contact</h4>
           <div className="space-y-3 text-sm text-primary-foreground/70">
-            <div className="flex items-start gap-2">
-              <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-              <span>Pauni, District Bhandara, Maharashtra, India</span>
+            <a
+              href="https://maps.google.com/?q=Shivraya+Group+Of+Companies+Pauni+Bhandara+Maharashtra"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-2 hover:text-white transition-colors group"
+            >
+              <MapPin className="h-4 w-4 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
+              <span>Shivraya Group Of Companies, Pauni, District Bhandara, Maharashtra, India</span>
+            </a>
+            <div className="flex flex-col gap-2">
+              <a
+                href="tel:+918766837945"
+                className="flex items-center gap-2 hover:text-white transition-colors group"
+              >
+                <Phone className="h-4 w-4 shrink-0 group-hover:scale-110 transition-transform" />
+                <span>+91 87668 37945</span>
+              </a>
+              <a
+                href="tel:+917559204328"
+                className="flex items-center gap-2 hover:text-white transition-colors group"
+              >
+                <Phone className="h-4 w-4 shrink-0 group-hover:scale-110 transition-transform" />
+                <span>+91 75592 04328</span>
+              </a>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4 shrink-0" />
-              <span>+91 87668 37945</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="h-4 w-4 shrink-0" />
+            <a
+              href="mailto:shivrayagroupofcompanies@gmail.com"
+              className="flex items-center gap-2 hover:text-white transition-colors group"
+            >
+              <Mail className="h-4 w-4 shrink-0 group-hover:scale-110 transition-transform" />
               <span>shivrayagroupofcompanies@gmail.com</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
